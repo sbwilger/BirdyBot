@@ -1,0 +1,12 @@
+Requires:
+Microsoft .Net Core 3.1
+
+DSharpPlus
+DSharpPlus.CommandsNext
+DSharpPlus.Interactivity
+
+A config.json file in the form of
+{
+"token": "your bot's discord auth token"
+"prefix": "the prefix you want to use" (mine uses ?)
+}
