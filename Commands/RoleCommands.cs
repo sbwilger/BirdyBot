@@ -94,9 +94,21 @@ namespace BirdyBot.Commands
             {
                 await ctx.Member.GrantRoleAsync(heSheThey).ConfigureAwait(false); 
             }
-            else
+            else if(reactionResult.Result.Emoji == five)
             {
-                //Something went wrong
+                await ctx.Member.GrantRoleAsync(theyHe).ConfigureAwait(false);
+            }
+            else if(reactionResult.Result.Emoji == six)
+            {
+                await ctx.Member.GrantRoleAsync(theyShe).ConfigureAwait(false);
+            }
+            else if(reactionResult.Result.Emoji == seven)
+            {
+                await ctx.Member.GrantRoleAsync(callMeWhatever).ConfigureAwait(false);
+            }
+            else if(reactionResult.Result.Emoji == eight)
+            {
+                await ctx.Member.GrantRoleAsync(noPronouns).ConfigureAwait(false);
             }
 
             await pronounMessage.DeleteAsync().ConfigureAwait(false);
