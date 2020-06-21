@@ -30,6 +30,8 @@ namespace BirdyBot.Commands
                 Color = DiscordColor.Cyan
             };
 
+            pronounEmbed.AddField("", "she/her")
+
             DiscordMessage pronounMessage = await ctx.Channel.SendMessageAsync(embed: pronounEmbed).ConfigureAwait(false);
         }
 
