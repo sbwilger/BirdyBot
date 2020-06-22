@@ -4,6 +4,7 @@ using DSharpPlus.Entities;
 using DSharpPlus.Interactivity;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,7 +27,7 @@ namespace BirdyBot.Commands
         {
             DiscordEmbedBuilder pronounEmbed = new DiscordEmbedBuilder
             {
-                Title = "Set your pronouns",
+                Title = "Set Your Pronouns",
                 Color = DiscordColor.Cyan
             };
 
@@ -38,7 +39,7 @@ namespace BirdyBot.Commands
             pronounEmbed.AddField(":five: :", "They / He");
             pronounEmbed.AddField(":six: :", "They / She");
             pronounEmbed.AddField(":seven: :", "Call Me Whatever (No Preference)");
-            pronounEmbed.AddField(":eight: :", "Call Me By My Name (No Pronouns)");
+            pronounEmbed.AddField(":eight: :", "Call Me By My Name (No Nouns)");
 
             DiscordMessage pronounMessage = await ctx.Channel.SendMessageAsync(embed: pronounEmbed).ConfigureAwait(false);
 
@@ -58,7 +59,7 @@ namespace BirdyBot.Commands
             DiscordRole theyHe = ctx.Guild.GetRole(724252024903827508);
             DiscordRole theyShe = ctx.Guild.GetRole(724252107066048615);
             DiscordRole callMeWhatever = ctx.Guild.GetRole(724252197990432862);
-            DiscordRole noPronouns = ctx.Guild.GetRole(724252313681920061);
+            DiscordRole noNouns = ctx.Guild.GetRole(724252313681920061);
 
             await pronounMessage.CreateReactionAsync(one).ConfigureAwait(false);
             await pronounMessage.CreateReactionAsync(two).ConfigureAwait(false);
@@ -80,35 +81,91 @@ namespace BirdyBot.Commands
 
             if (reactionResult.Result.Emoji == one)
             {
-                await ctx.Member.GrantRoleAsync(sheHer).ConfigureAwait(false);
+                if (ctx.Member.Roles.Contains(sheHer))
+                {
+                    await ctx.Member.RevokeRoleAsync(sheHer).ConfigureAwait(false);
+                }
+                else
+                {
+                    await ctx.Member.GrantRoleAsync(sheHer).ConfigureAwait(false);
+                }
             }
             else if (reactionResult.Result.Emoji == two)
             {
-                await ctx.Member.GrantRoleAsync(heHim).ConfigureAwait(false);
+                if (ctx.Member.Roles.Contains(heHim))
+                {
+                    await ctx.Member.RevokeRoleAsync(heHim).ConfigureAwait(false);
+                }
+                else
+                {
+                    await ctx.Member.GrantRoleAsync(heHim).ConfigureAwait(false);
+                }
             }
             else if (reactionResult.Result.Emoji == three)
             {
-                await ctx.Member.GrantRoleAsync(theyThem).ConfigureAwait(false);
+                if (ctx.Member.Roles.Contains(theyThem))
+                {
+                    await ctx.Member.RevokeRoleAsync(theyThem).ConfigureAwait(false);
+                }
+                else
+                {
+                    await ctx.Member.GrantRoleAsync(theyThem).ConfigureAwait(false);
+                }
             }
             else if (reactionResult.Result.Emoji == four)
             {
-                await ctx.Member.GrantRoleAsync(heSheThey).ConfigureAwait(false); 
+                if (ctx.Member.Roles.Contains(heSheThey))
+                {
+                    await ctx.Member.RevokeRoleAsync(heSheThey).ConfigureAwait(false);
+                }
+                else
+                {
+                    await ctx.Member.GrantRoleAsync(heSheThey).ConfigureAwait(false);
+                }
             }
             else if(reactionResult.Result.Emoji == five)
             {
-                await ctx.Member.GrantRoleAsync(theyHe).ConfigureAwait(false);
+                if (ctx.Member.Roles.Contains(theyHe))
+                {
+                    await ctx.Member.RevokeRoleAsync(theyHe).ConfigureAwait(false);
+                }
+                else
+                {
+                    await ctx.Member.GrantRoleAsync(theyHe).ConfigureAwait(false);
+                }
             }
             else if(reactionResult.Result.Emoji == six)
             {
-                await ctx.Member.GrantRoleAsync(theyShe).ConfigureAwait(false);
+                if (ctx.Member.Roles.Contains(theyShe))
+                {
+                    await ctx.Member.RevokeRoleAsync(theyShe).ConfigureAwait(false);
+                }
+                else
+                {
+                    await ctx.Member.GrantRoleAsync(theyShe).ConfigureAwait(false);
+                }
             }
             else if(reactionResult.Result.Emoji == seven)
             {
-                await ctx.Member.GrantRoleAsync(callMeWhatever).ConfigureAwait(false);
+                if (ctx.Member.Roles.Contains(callMeWhatever))
+                {
+                    await ctx.Member.RevokeRoleAsync(callMeWhatever).ConfigureAwait(false);
+                }
+                else
+                {
+                    await ctx.Member.GrantRoleAsync(callMeWhatever).ConfigureAwait(false);
+                }
             }
             else if(reactionResult.Result.Emoji == eight)
             {
-                await ctx.Member.GrantRoleAsync(noPronouns).ConfigureAwait(false);
+                if (ctx.Member.Roles.Contains(noNouns))
+                {
+                    await ctx.Member.RevokeRoleAsync(noNouns).ConfigureAwait(false);
+                }
+                else
+                {
+                    await ctx.Member.GrantRoleAsync(noNouns).ConfigureAwait(false);
+                }
             }
 
             await pronounMessage.DeleteAsync().ConfigureAwait(false);
