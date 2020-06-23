@@ -1,3 +1,6 @@
+Developer's Note:
+The role IDs in the bot are the ones for my server. You probably have to copy your own by setting discord to developer mode.
+
 Requires:
 Microsoft .Net Core 3.1
 
