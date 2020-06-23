@@ -165,6 +165,13 @@ namespace BirdyBot.Commands
             await ctx.Channel.SendMessageAsync("https://media.discordapp.net/attachments/517738784620806154/676500255126061056/f5a.gif").ConfigureAwait(false);
         }
 
+        [Command("missYou")]
+        [Description("Yearn o'clock")]
+        public async Task MissYou(CommandContext ctx)
+        {
+            await ctx.Channel.SendMessageAsync("https://media.tenor.com/images/319ccf6cf2acc571677cd3626fe2897a/tenor.gif").ConfigureAwait(false);
+        }
+
         [Command("ohGodWhat")]
         [Description("Gif of a miata looking surprised")]
         public async Task OhGodWhat(CommandContext ctx)
