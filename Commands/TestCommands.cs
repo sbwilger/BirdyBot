@@ -24,10 +24,19 @@ namespace BirdyBot.Commands
         public async Task Dialogue(CommandContext ctx)
         {
             TextStep inputStep = new TextStep("Enter something interesting", null);
+            TextStep funnyStep = new TextStep("Haha, funny", null);
 
             string input = string.Empty;
 
-            inputStep.OnValidResult += (result) => input = result;
+            inputStep.OnValidResult += (result) =>
+            {
+                input = result;
+
+                if(result == "something interesting")
+                {
+                    inputStep.SetNextStep(funnyStep);
+                }
+            };
 
             var userChannel = await ctx.Member.CreateDmChannelAsync().ConfigureAwait(false);
 
