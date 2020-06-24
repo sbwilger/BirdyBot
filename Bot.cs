@@ -85,6 +85,7 @@ namespace BirdyBot
             Commands.RegisterCommands<LinkCommands>();
             Commands.RegisterCommands<RoleCommands>();
             Commands.RegisterCommands<PollCommand>();
+            Commands.RegisterCommands<TestCommands>();
 
             //connects to the server
             await Client.ConnectAsync();
