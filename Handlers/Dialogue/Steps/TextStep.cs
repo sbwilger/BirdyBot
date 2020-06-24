@@ -18,7 +18,7 @@ namespace BirdyBot.Handlers.Dialogue.Steps
 {
     public class TextStep : BaseDialogueStep
     {
-        private readonly IDialogueStep _nextStep;
+        private IDialogueStep _nextStep;
         private readonly int? _minLength;
         private readonly int? _maxLength;
 
@@ -36,6 +36,11 @@ namespace BirdyBot.Handlers.Dialogue.Steps
         public Action<string> OnValidResult { get; set; } = delegate { };
 
         public override IDialogueStep NextStep => _nextStep;
+
+        public void SetNextStep(IDialogueStep nextStep)
+        {
+            _nextStep = nextStep;
+        }
 
         public override async Task<bool> ProcessStep(DiscordClient client, DiscordChannel channel, DiscordUser user)
         {
