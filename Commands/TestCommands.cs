@@ -53,10 +53,13 @@ namespace BirdyBot.Commands
         [Command("emojiDialogue")]
         public async Task EmojiDialogue(CommandContext ctx)
         {
+            TextStep yesStep = new TextStep("You chose yes", null);
+            TextStep noStep = new TextStep("You chose no", null);
+
             ReactionStep emojiStep = new ReactionStep("Yes or No?", new Dictionary<DiscordEmoji, ReactionStepData>
             {
-                { DiscordEmoji.FromName(ctx.Client, ":+1:"), new ReactionStepData{Content = "This means yes", NextStep = null} },
-                { DiscordEmoji.FromName(ctx.Client, ":-1:"), new ReactionStepData{Content = "This means no", NextStep = null} }
+                { DiscordEmoji.FromName(ctx.Client, ":+1:"), new ReactionStepData{Content = "This means yes", NextStep = yesStep} },
+                { DiscordEmoji.FromName(ctx.Client, ":-1:"), new ReactionStepData{Content = "This means no", NextStep = noStep} }
             });
 
             DiscordDmChannel userChannel = await ctx.Member.CreateDmChannelAsync().ConfigureAwait(false);
