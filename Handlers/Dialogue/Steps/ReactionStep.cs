@@ -56,6 +56,8 @@ namespace BirdyBot.Handlers.Dialogue.Steps
                     await embed.CreateReactionAsync(emoji).ConfigureAwait(false);
                 }
 
+                await embed.CreateReactionAsync(cancelEmoji).ConfigureAwait(false);
+
                 var reactionResult = await interactivity.WaitForReactionAsync(x => _options.ContainsKey(x.Emoji) || x.Emoji == cancelEmoji, embed, user).ConfigureAwait(false);
 
                 if(reactionResult.Result.Emoji == cancelEmoji)
