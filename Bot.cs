@@ -9,7 +9,7 @@ using System.IO;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
-using BirdyBot.Commands;
+using sbwilger.BirdyBot.Commands;
 
 /// <summary>
 /// Serana Wilger
@@ -19,7 +19,7 @@ using BirdyBot.Commands;
 /// This is the core class of the bot
 /// </summary>
 
-namespace BirdyBot
+namespace sbwilger.BirdyBot
 {
     public class Bot
     {

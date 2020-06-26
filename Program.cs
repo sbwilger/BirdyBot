@@ -6,7 +6,7 @@
 /// This is the main class which runs the bot
 /// </summary>
 
-namespace BirdyBot
+namespace sbwilger.BirdyBot
 {
     class Program
     {

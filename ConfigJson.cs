@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BirdyBot
+namespace sbwilger.BirdyBot
 {
     //struct to store data from the Json
     public struct ConfigJson
