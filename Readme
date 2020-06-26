@@ -8,6 +8,7 @@ DSharpPlus
 DSharpPlus.CommandsNext
 DSharpPlus.Interactivity
 
+Microsoft.EntityFrameworkCore
 System.ComponentModel.Annotations
 
 A config.json file in the form of
