@@ -8,6 +8,8 @@ DSharpPlus
 DSharpPlus.CommandsNext
 DSharpPlus.Interactivity
 
+System.ComponentModel.Annotations
+
 A config.json file in the form of
 {
 "token": "your bot's discord auth token"
