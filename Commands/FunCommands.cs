@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 /// This class defines a bunch of commands which return fun gifs when used.
 /// </summary>
 
-namespace BirdyBot.Commands
+namespace sbwilger.BirdyBot.Commands
 {
     public class FunCommands : BaseCommandModule
     {

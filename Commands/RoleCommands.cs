@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 /// This class defines the commands which allow the users to manage their roles.
 /// </summary>
 
-namespace BirdyBot.Commands
+namespace sbwilger.BirdyBot.Commands
 {
     class RoleCommands : BaseCommandModule
     {

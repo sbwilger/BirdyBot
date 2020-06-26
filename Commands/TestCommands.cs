@@ -1,5 +1,5 @@
-﻿using BirdyBot.Handlers.Dialogue;
-using BirdyBot.Handlers.Dialogue.Steps;
+﻿using sbwilger.BirdyBot.Handlers.Dialogue;
+using sbwilger.BirdyBot.Handlers.Dialogue.Steps;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 /// Testing new things on the server
 /// </summary>
 
-namespace BirdyBot.Commands
+namespace sbwilger.BirdyBot.Commands
 {
     class TestCommands : BaseCommandModule
     {

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 /// This class defines the commands which send my links to the server.
 /// </summary>
 
-namespace BirdyBot.Commands
+namespace sbwilger.BirdyBot.Commands
 {
     class LinkCommands : BaseCommandModule
     {

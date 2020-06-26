@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 /// A test command laying the groundwork for the pronoun command
 /// </summary>
 
-namespace BirdyBot.Commands
+namespace sbwilger.BirdyBot.Commands
 {
     class PollCommand : BaseCommandModule
     {
