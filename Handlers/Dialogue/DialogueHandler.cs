@@ -1,4 +1,4 @@
-﻿using BirdyBot.Handlers.Dialogue.Steps;
+﻿using sbwilger.BirdyBot.Handlers.Dialogue.Steps;
 using DSharpPlus;
 using DSharpPlus.Entities;
 using System;
@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 /// The class for handling dialogue trees
 /// </summary>
 
-namespace BirdyBot.Handlers.Dialogue
+namespace sbwilger.BirdyBot.Handlers.Dialogue
 {
     public class DialogueHandler
     {
