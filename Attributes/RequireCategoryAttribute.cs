@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 /// Limits commands to certain categories, or keeps them out.
 /// </summary>
 
-namespace BirdyBot.Attributes
+namespace sbwilger.BirdyBot.Attributes
 {
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = false)]
     public class RequireCategoryAttribute : CheckBaseAttribute

@@ -10,7 +10,7 @@ using System.Text;
 /// The enum for setting the mode ofchecking if a command is allowed in a given channel
 /// </summary>
 
-namespace BirdyBot.Attributes
+namespace sbwilger.BirdyBot.Attributes
 {
     public enum ChannelCheckMode
     {
