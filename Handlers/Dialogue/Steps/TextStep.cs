@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 /// Dialogue steps that take a text result
 /// </summary>
 
-namespace BirdyBot.Handlers.Dialogue.Steps
+namespace sbwilger.BirdyBot.Handlers.Dialogue.Steps
 {
     public class TextStep : BaseDialogueStep
     {

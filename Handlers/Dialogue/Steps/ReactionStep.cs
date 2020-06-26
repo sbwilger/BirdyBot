@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 /// A dialogue step that uses reaction emojis
 /// </summary>
 
-namespace BirdyBot.Handlers.Dialogue.Steps
+namespace sbwilger.BirdyBot.Handlers.Dialogue.Steps
 {
     public class ReactionStep : BaseDialogueStep
     {

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 /// Abstract class for handling dialogue steps.
 /// </summary>
 
-namespace BirdyBot.Handlers.Dialogue.Steps
+namespace sbwilger.BirdyBot.Handlers.Dialogue.Steps
 {
     public abstract class BaseDialogueStep : IDialogueStep
     {

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 /// The interface for defining Dialogue Steps
 /// </summary>
 
-namespace BirdyBot.Handlers.Dialogue.Steps
+namespace sbwilger.BirdyBot.Handlers.Dialogue.Steps
 {
     public interface IDialogueStep
     {

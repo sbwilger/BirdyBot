@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 /// Dialogue steps that take an int result
 /// </summary>
 
-namespace BirdyBot.Handlers.Dialogue.Steps
+namespace sbwilger.BirdyBot.Handlers.Dialogue.Steps
 {
     public class IntStep : BaseDialogueStep
     {
