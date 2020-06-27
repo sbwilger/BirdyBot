@@ -1,4 +1,7 @@
-﻿/// <summary>
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+
+/// <summary>
 /// Serana Wilger
 /// 06/18/2020
 /// Program.cs
@@ -11,10 +14,15 @@ namespace sbwilger.BirdyBot
     class Program
     {
         //instantiates and runs the bot
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Bot bot = new Bot();
-            bot.RunAsync().GetAwaiter().GetResult();
+            
         }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            });
     }
 }
