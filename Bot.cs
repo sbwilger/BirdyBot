@@ -32,8 +32,8 @@ namespace sbwilger.BirdyBot
         //stores the ability for the user to call commands
         public CommandsNextExtension Commands { get; private set; }
 
-        //runs the bot
-        public async Task RunAsync()
+        //constructor
+        public Bot(IServiceProvider services)
         {
             //creates the string to hold the config file
             string json = string.Empty;
@@ -41,7 +41,7 @@ namespace sbwilger.BirdyBot
             //reads the config file
             using (FileStream fs = File.OpenRead("config.json"))
             using (StreamReader sr = new StreamReader(fs, new UTF8Encoding(false)))
-                json = await sr.ReadToEndAsync().ConfigureAwait(false);
+                json = sr.ReadToEnd();
 
             //deserializes the json into a struct
             ConfigJson configJson = JsonConvert.DeserializeObject<ConfigJson>(json);
@@ -71,10 +71,11 @@ namespace sbwilger.BirdyBot
             //configures the command settings
             CommandsNextConfiguration commandsConfig = new CommandsNextConfiguration
             {
-                StringPrefixes = new string[] {configJson.Prefix},
+                StringPrefixes = new string[] { configJson.Prefix },
                 EnableDms = false,
                 EnableMentionPrefix = true,
-                DmHelp = true
+                DmHelp = true,
+                Services = services
             };
 
             //activates commands
@@ -88,10 +89,7 @@ namespace sbwilger.BirdyBot
             Commands.RegisterCommands<TestCommands>();
 
             //connects to the server
-            await Client.ConnectAsync();
-
-            //prevents the bot from shutting off
-            await Task.Delay(-1);
+            Client.ConnectAsync();
         }
 
         //a blank method to frame the point when the bot is ready
