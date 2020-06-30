@@ -8,6 +8,9 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
+using sbwilger.DAL;
+using sbwilger.DAL.Models.Items;
+using Microsoft.EntityFrameworkCore;
 
 /// <summary>
 /// Serana Wilger
@@ -21,6 +24,13 @@ namespace sbwilger.BirdyBot.Commands
 {
     class TestCommands : BaseCommandModule
     {
+        private readonly RPGContext _context;
+
+        public TestCommands(RPGContext context)
+        {
+            _context = context;
+        }
+
         [Command("dialogue")]
         public async Task Dialogue(CommandContext ctx)
         {
@@ -72,6 +82,19 @@ namespace sbwilger.BirdyBot.Commands
             {
                 return;
             }
+        }
+
+        [Command("additem")]
+        public async Task AddItem(CommandContext ctx, string name)
+        {
+            await _context.Items.AddAsync(new Item { Name = name, Description = "Test Description"}).ConfigureAwait(false);
+            await _context.SaveChangesAsync().ConfigureAwait(false);
+        }
+
+        [Command("item")]
+        public async Task Item(CommandContext ctx, string name)
+        {
+            List<Item> items = await _context.Items.ToListAsync<Item>().ConfigureAwait(false);
         }
     }
 }
