@@ -8,7 +8,12 @@ DSharpPlus
 DSharpPlus.CommandsNext
 DSharpPlus.Interactivity
 
+Microsoft.AspNetCore.Hosting
 Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore.Relational
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.Extensions.Hosting
 System.ComponentModel.Annotations
 
 A config.json file in the form of
