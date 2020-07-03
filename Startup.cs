@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using sbwilger.Core.Services.Items;
 using sbwilger.DAL;
 using System;
 using System.Collections.Generic;
@@ -21,11 +22,15 @@ namespace sbwilger.BirdyBot
     {
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.AddDbContext<RPGContext>(options =>
             {
                 options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=RPGContext;Trusted_Connection=true;MultipleActiveResultSets=true",
                     x => x.MigrationsAssembly("sbwilger.DAL.Migrations"));
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
+
+            services.AddScoped<IItemService, ItemService>();
 
             ServiceProvider serviceProvider = services.BuildServiceProvider();
 
