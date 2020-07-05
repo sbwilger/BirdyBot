@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using sbwilger.Core.Services.Items;
+using sbwilger.Core.Services.Profiles;
 using sbwilger.DAL;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace sbwilger.BirdyBot
             });
 
             services.AddScoped<IItemService, ItemService>();
+            services.AddScoped<IProfileService, ProfileService>();
 
             ServiceProvider serviceProvider = services.BuildServiceProvider();
 
