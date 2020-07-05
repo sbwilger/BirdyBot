@@ -87,7 +87,8 @@ namespace sbwilger.BirdyBot
             Commands.RegisterCommands<RoleCommands>();
             Commands.RegisterCommands<PollCommand>();
             Commands.RegisterCommands<TestCommands>();
-            Commands.RegisterCommands<RPGCommands>();
+            Commands.RegisterCommands<ItemCommands>();
+            Commands.RegisterCommands<ProfileCommands>();
 
             //connects to the server
             Client.ConnectAsync();
