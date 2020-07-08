@@ -32,6 +32,7 @@ namespace sbwilger.BirdyBot
             });
 
             services.AddScoped<IItemService, ItemService>();
+            services.AddScoped<IExperienceService, ExperienceService>();
             services.AddScoped<IProfileService, ProfileService>();
 
             ServiceProvider serviceProvider = services.BuildServiceProvider();
