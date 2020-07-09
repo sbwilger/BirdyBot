@@ -25,6 +25,13 @@ namespace sbwilger.BirdyBot.Commands
             await ctx.Channel.SendMessageAsync("https://cdn.discordapp.com/attachments/517738784620806154/676500826096926722/d8enda9pmicuvq4kmsgh.gif").ConfigureAwait(false);
         }
 
+        [Command("babyYoda")]
+        [Description("Gif of baby yoda flying")]
+        public async Task BabyYoda(CommandContext ctx)
+        {
+            await ctx.Channel.SendMessageAsync("https://tenor.com/view/baby-yoda-baby-yoda-happy-laughing-smile-happy-gif-16061896").ConfigureAwait(false);
+        }
+
         [Command("badidea")]
         [Description("Gif of the Heavy from TF2 having a very bad idea")]
         public async Task BadIdea(CommandContext ctx)

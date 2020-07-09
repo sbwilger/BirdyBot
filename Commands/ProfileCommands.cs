@@ -45,7 +45,9 @@ namespace sbwilger.BirdyBot.Commands
             };
 
             profileEmbed.WithThumbnail(member.AvatarUrl);
-            profileEmbed.AddField("Xp", profile.Exp.ToString());
+            profileEmbed.AddField("Level", profile.Level.ToString());
+            profileEmbed.AddField("XP", profile.Exp.ToString());
+            profileEmbed.AddField("XP to Next Level", profile.ExpToLevel.ToString());
 
             await ctx.Channel.SendMessageAsync(embed: profileEmbed).ConfigureAwait(false);
         }
