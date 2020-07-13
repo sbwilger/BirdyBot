@@ -179,6 +179,13 @@ namespace sbwilger.BirdyBot.Commands
             await ctx.Channel.SendMessageAsync("https://media.tenor.com/images/319ccf6cf2acc571677cd3626fe2897a/tenor.gif").ConfigureAwait(false);
         }
 
+        [Command("noice")]
+        [Description("Noice")]
+        public async Task Noice(CommandContext ctx)
+        {
+            await ctx.Channel.SendMessageAsync("https://giphy.com/gifs/yJFeycRK2DB4c").ConfigureAwait(false);
+        }
+
         [Command("ohGodWhat")]
         [Description("Gif of a miata looking surprised")]
         public async Task OhGodWhat(CommandContext ctx)
