@@ -151,6 +151,13 @@ namespace sbwilger.BirdyBot.Commands
             await ctx.Channel.SendMessageAsync("https://cdn.discordapp.com/attachments/650801324107235418/677988796406431901/8544265941277400730.gif").ConfigureAwait(false);
         }
 
+        [Command("lovebear")]
+        [Description("Gif for showering someone with all of the love and affection")]
+        public async Task LoveBear(CommandContext ctx)
+        {
+            await ctx.Channel.SendMessageAsync("https://cdn.discordapp.com/attachments/547466846551670795/734602395182432437/unknown.gif").ConfigureAwait(false);
+        }
+
         [Command("miata")]
         [Description("Gif of a miata emanating an aura")]
         public async Task Miata(CommandContext ctx)
